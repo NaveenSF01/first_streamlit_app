@@ -1,4 +1,4 @@
-import streamlit
+oimport streamlit
 import pandas
 
 streamlit.title('My Parents New Healthy Diner')
@@ -16,7 +16,8 @@ my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.co
 my_fruit_list = my_fruit_list.set_index('Fruit') # Changing the index to have the Fruit coulmn name in the list index
 
 # Multiselect Picklist
-streamlit.multiselect("Pick some fruits:",list(my_fruit_list.index))
+# streamlit.multiselect("Pick some fruits:",list(my_fruit_list.index)) # or streamlit.multiselect("Pick some fruits:",list(my_fruit_list.Fruit))
+streamlit.multiselect("Pick some fruits:",list(my_fruit_list.index),['Avocado',['Strawberries']])
 # Display the table on page
 streamlit.dataframe(my_fruit_list)
 
